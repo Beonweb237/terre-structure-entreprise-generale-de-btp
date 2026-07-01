@@ -98,11 +98,14 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-caption text-concrete-grey text-center md:text-right">
-            Terre &amp; Structure, all rights reserved - Rue Gédéon Darchambeau 23A, 5002 Saint-Servais - NDA BE0420.513.263 -{' '}
-            <Link to="/contact" className="underline hover:text-pure-white transition-colors">Contact us by mail</Link>
-            {' '}- Powered by Beonweb
-          </p>
+          <div className="flex flex-col items-center md:items-end gap-1 text-caption text-concrete-grey text-center md:text-right">
+            <p>Terre &amp; Structure, all rights reserved</p>
+            <p>Rue Gédéon Darchambeau 23A, 5002 Saint-Servais - NDA BE0420.513.263</p>
+            <p>
+              <Link to="/contact" className="underline hover:text-pure-white transition-colors">Contact us by mail</Link>
+            </p>
+            <p>Powered by Beonweb</p>
+          </div>
         </div>
       </div>
     </footer>
