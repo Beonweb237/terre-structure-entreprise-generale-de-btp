@@ -104,7 +104,17 @@ export default function Footer() {
             <p>
               <Link to="/contact" className="underline hover:text-pure-white transition-colors">Contact us by mail</Link>
             </p>
-            <p>Powered by Beonweb</p>
+            <p>
+              Powered by{' '}
+              <a
+                href="https://www.beonweb.cm/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-pure-white transition-colors"
+              >
+                Beonweb
+              </a>
+            </p>
           </div>
         </div>
       </div>
