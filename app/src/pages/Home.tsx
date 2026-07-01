@@ -64,15 +64,6 @@ function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-container mx-auto px-6 md:px-12 lg:px-20 pb-16 md:pb-24 lg:pb-32 w-full">
         <div ref={contentRef} className="max-w-2xl">
-          {/* Logo */}
-          <div className="hero-anim mb-6">
-            <img
-              src="/logo-terrestructure-alt.svg"
-              alt="Terre & Structure"
-              className="h-12 md:h-14"
-            />
-          </div>
-
           {/* Label */}
           <p className="hero-anim font-archivo text-heading-lg text-pure-white uppercase mb-2">
             Rénovation Intérieure

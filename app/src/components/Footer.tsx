@@ -101,6 +101,7 @@ export default function Footer() {
           <p className="text-caption text-concrete-grey text-center md:text-right">
             Terre &amp; Structure, all rights reserved - Rue Gédéon Darchambeau 23A, 5002 Saint-Servais - NDA BE0420.513.263 -{' '}
             <Link to="/contact" className="underline hover:text-pure-white transition-colors">Contact us by mail</Link>
+            {' '}- Powered by Beonweb
           </p>
         </div>
       </div>
