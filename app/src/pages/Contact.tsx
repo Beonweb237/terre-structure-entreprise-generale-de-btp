@@ -1,10 +1,19 @@
 import { useState } from 'react'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, HelpCircle } from 'lucide-react'
 
 const contacts = [
   { service: 'Service Commercial / Devis', phone: '+32 81 00 00 01' },
   { service: 'Service Apres-Vente', phone: '+32 81 00 00 02' },
   { service: 'Ressources Humaines', phone: '+32 81 00 00 03' },
+]
+
+const interventionZones = ['Namur', 'Liege', 'Bruxelles', 'Luxembourg', 'Hainaut']
+
+const faqs = [
+  { q: 'Le devis est-il gratuit ?', a: 'Oui, toute demande de devis est gratuite et sans engagement.' },
+  { q: 'En combien de temps recevez-vous une reponse ?', a: 'Notre equipe commerciale s\'engage a vous repondre sous 48 heures ouvrees.' },
+  { q: 'Intervenez-vous en dehors de Namur ?', a: 'Oui, nous intervenons dans toute la Wallonie et a Bruxelles, voir nos zones ci-contre.' },
+  { q: 'Puis-je visiter un chantier en cours ?', a: 'Sur demande et sous reserve des contraintes de securite, nous organisons volontiers des visites.' },
 ]
 
 export default function Contact() {
@@ -79,6 +88,30 @@ export default function Contact() {
                   </button>
                 </form>
               )}
+
+              {/* Map placeholder */}
+              <div className="mt-10 aspect-[16/9] rounded-lg bg-white/5 flex items-center justify-center">
+                <div className="text-center">
+                  <MapPin size={32} className="text-safety-orange mx-auto mb-2" />
+                  <p className="text-body-rg text-concrete-grey text-sm">Rue Gedeon Darchambeau 23A, 5002 Saint-Servais</p>
+                </div>
+              </div>
+
+              {/* FAQ */}
+              <div className="mt-10">
+                <h2 className="font-archivo text-2xl text-pure-white mb-6 flex items-center gap-2">
+                  <HelpCircle size={22} className="text-safety-orange" />
+                  Questions frequentes
+                </h2>
+                <div className="space-y-3">
+                  {faqs.map((faq) => (
+                    <div key={faq.q} className="p-4 rounded-lg bg-white/5">
+                      <p className="font-archivo text-pure-white text-sm mb-1">{faq.q}</p>
+                      <p className="text-body-rg text-concrete-grey text-sm">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="space-y-6">
@@ -108,6 +141,27 @@ export default function Contact() {
                       <span className="text-concrete-grey">{c.service}</span>
                       <span className="text-pure-white">{c.phone}</span>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-6 rounded-lg bg-white/5">
+                <div className="flex items-center gap-2 mb-3">
+                  <Clock size={18} className="text-safety-orange" />
+                  <h3 className="font-archivo text-pure-white">Delai de reponse garanti</h3>
+                </div>
+                <p className="text-body-rg text-concrete-grey text-sm">
+                  Reponse sous 48h ouvrees pour toute demande de devis.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-archivo text-lg text-pure-white mb-3">Zones d'intervention</h3>
+                <div className="flex flex-wrap gap-2">
+                  {interventionZones.map((zone) => (
+                    <span key={zone} className="px-3 py-1.5 rounded-full bg-white/5 text-xs text-concrete-grey">
+                      {zone}
+                    </span>
                   ))}
                 </div>
               </div>

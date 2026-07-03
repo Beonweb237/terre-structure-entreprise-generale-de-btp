@@ -14,6 +14,20 @@ const benefits = [
   'Vehicule de fonction pour les postes terrain',
   'Mutuelle et prevoyance avantageuses',
   'Evolution interne valorisee',
+  'Prime de participation aux resultats',
+  'Comite d\'entreprise et avantages sociaux',
+]
+
+const recruitmentProcess = [
+  { step: '1', title: 'Candidature', desc: 'Envoi de votre CV et lettre de motivation via le formulaire ou une offre.' },
+  { step: '2', title: 'Entretien RH', desc: 'Echange telephonique puis entretien avec notre equipe Ressources Humaines.' },
+  { step: '3', title: 'Entretien technique', desc: 'Rencontre avec le responsable operationnel du poste concerne.' },
+  { step: '4', title: 'Integration', desc: 'Parcours d\'onboarding personnalise et suivi durant les 3 premiers mois.' },
+]
+
+const teamTestimonials = [
+  { name: 'Marc Delvaux', role: 'Chef de Chantier depuis 8 ans', quote: 'Ce que j\'apprecie, c\'est la confiance qu\'on nous accorde des le depart et les opportunites d\'evolution reelles.' },
+  { name: 'Sophie Lambert', role: 'Ingenieure BIM depuis 3 ans', quote: 'Une entreprise qui investit vraiment dans la formation et les outils numeriques, on ne s\'ennuie jamais.' },
 ]
 
 export default function Carrieres() {
@@ -118,6 +132,34 @@ export default function Carrieres() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          {/* Recruitment process */}
+          <div className="mt-20">
+            <h2 className="font-archivo text-2xl text-pure-white mb-8">Notre processus de recrutement</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {recruitmentProcess.map((step) => (
+                <div key={step.step} className="p-6 rounded-lg bg-white/5">
+                  <p className="font-archivo text-3xl text-safety-orange mb-3">{step.step}</p>
+                  <h3 className="font-archivo text-lg text-pure-white mb-2">{step.title}</h3>
+                  <p className="text-body-rg text-concrete-grey text-sm">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Team testimonials */}
+          <div className="mt-20">
+            <h2 className="font-archivo text-2xl text-pure-white mb-8">Ils temoignent</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {teamTestimonials.map((t) => (
+                <div key={t.name} className="p-6 rounded-lg border border-white/10">
+                  <p className="text-body-rg text-concrete-grey italic mb-4">"{t.quote}"</p>
+                  <p className="font-archivo text-pure-white">{t.name}</p>
+                  <p className="text-caption text-concrete-grey">{t.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
